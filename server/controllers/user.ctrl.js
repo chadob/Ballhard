@@ -10,7 +10,7 @@ module.exports = {
           picture: "primary_bg",
           recentSearches: [],
           favoriteVideos: [],
-          ratings: {}
+          ratings: {"dummy": 0}
         }).save((err, newUser) => {
             if (err)
                 res.send(err)

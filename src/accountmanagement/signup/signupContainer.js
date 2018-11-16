@@ -16,15 +16,12 @@ class SignupContainer extends React.Component {
   }
   onChange(e, input) {
     this.setState({[input]: e.target.value})
-    console.log(this.state)
   }
   signUp(username, password) {
-    console.log(username, password)
     this.props.signUp(username, password);
     this.props.toggleSignUp();
   }
   render() {
-    console.log(this.state.password)
     return (
         <Signup
           onChange={this.onChange}
@@ -48,7 +45,7 @@ function mapStateToProps ( state ) {
 const mapDispatchToProps = dispatch => ({
   toggleSignIn: (status) => dispatch(toggleSignIn(status)),
   toggleSignUp: (status) => dispatch(toggleSignUp(status)),
-  signUp: (userId) => dispatch(signUp(userId))
+  signUp: (username, password) => dispatch(signUp(username, password))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupContainer)

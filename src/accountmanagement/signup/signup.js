@@ -36,7 +36,7 @@ export class Signup extends React.Component {
               >
               </input>
             </div>
-            <button type="submit" onClick={(e) => this.props.signUp(this.props.username, this.props.password)}> Sign Up </button>
+            <button type="button" onClick={(e) => this.props.signUp(this.props.username, this.props.password)}> Sign Up </button>
           </form>
           <div>
             <span> "Already have an account?"

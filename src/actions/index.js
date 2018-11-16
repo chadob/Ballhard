@@ -53,7 +53,6 @@ export function fetchUserForSignIn(username, password) {
     axios.get(`${url}user/getuser/${username}`, {params: {password: password}})
     .then(function(res) {
       let data = res.data
-      console.log(data)
       if (data) {
         let userSearches = res.data.recentSearches
         dispatch(fetchAllVideos(userSearches))
@@ -63,7 +62,6 @@ export function fetchUserForSignIn(username, password) {
         dispatch({type: FAILED_SIGN_IN})
       }
     }).catch((err) => {
-      console.log(err)
     })
   }
 }
@@ -74,9 +72,7 @@ export const signOut = (id) => ({
 //add user to database and then sign in
 export const signUp = (username, password) => {
   return (dispatch) => {
-    console.log(username, password)
     axios.post(`${url}user`, {username: username, password: password}).then((res) => {
-      console.log(res);
       dispatch(fetchUserForSignIn(username, password));
     }).catch((err)=>console.log(err))
   }
@@ -95,7 +91,6 @@ export const fetchVideo = id => {
     axios.get(`${url}video/get/${id}`)
     .then((res) => {
       let video = res.data
-      console.log(video)
       dispatch({type: 'FETCH_VIDEO', payload: video});
       dispatch(fetchComments(id, video.commentOrder))
     }).catch((err) => console.log(err))
@@ -150,14 +145,12 @@ export function fetchSearches () {
 export function updateSearches (search, userId) {
   return (dispatch) => {
     axios.post(`${url}user/search/${search}`, {userId: userId}).then((res) => {
-      console.log(res);
       dispatch({
         type: UPDATE_USER_SEARCHES,
         payload: res.data
       });
     }).catch((err)=>console.log(err))
     axios.post(`${url}search/${search}`).then((res) => {
-      console.log(res);
       dispatch({
         type: UPDATE_SEARCHES,
       });
@@ -194,7 +187,6 @@ export const search = (query, type, videos) => {
 }
 //let state know that search is by section
 export const searchByPreset = (query, results) => {
-  console.log(results);
   return {
     type: SEARCH_BY_PRESET,
     payload: {
@@ -285,9 +277,7 @@ export const logIn = (username, password) => ({
 });
 export function rateVideo (rating, videoId, userId) {
   return (dispatch) => {
-    console.log(userId)
     axios.post(`${url}user/rate/${userId}`, {rating: rating, videoId: videoId}).then((res) => {
-      console.log(res);
       dispatch({
         type: RATE_VIDEO,
         payload: {
@@ -303,7 +293,6 @@ export function rateVideo (rating, videoId, userId) {
 export function toggleFavorite (videoId, userId) {
   return (dispatch) => {
     axios.post(`${url}user/favorite/${videoId}`, {userId: userId}).then((res) => {
-      console.log(res);
       dispatch({
         type: TOGGLE_FAVORITE,
         payload: res.data
@@ -313,9 +302,7 @@ export function toggleFavorite (videoId, userId) {
 }
 export function addComment (comment) {
   return (dispatch) => {
-    console.log(comment)
     axios.post(`${url}video/comment/${comment.video}`, comment).then((res) => {
-      console.log(res);
       dispatch({
         type: ADD_COMMENT,
         payload: comment
