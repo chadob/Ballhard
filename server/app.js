@@ -11,7 +11,7 @@ const app = express()
 const router = express.Router()
 const user = 'chado';
 const pass = encodeURIComponent("Jerryrice#80");
-console.log(pass);
+
 const url = `mongodb+srv://chado:${pass}@ballhard-t4bnn.mongodb.net/BallHard?retryWrites=true`
 /** configure cloudinary */
 cloudinary.config({
@@ -26,7 +26,6 @@ mongoose.connect(url, {useNewUrlParser: true}).then(
     console.log('success');
   },
   (err) => {
-    console.log("ARGGGEE")
     console.log(err);
   }
 );
