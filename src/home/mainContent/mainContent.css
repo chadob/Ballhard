@@ -1,0 +1,22 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 69vw;
+  margin: 0 auto;
+  color: #484848;
+  padding-bottom: 30px;
+}
+.section {
+  margin-top: 32px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+.section-title {
+  margin-bottom: 30px;
+}
+h3 {
+  margin-top: 0px;
+  font-weight: normal;
+}

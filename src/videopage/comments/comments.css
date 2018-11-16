@@ -1,0 +1,84 @@
+.comments {
+  width: calc(100% - 48px);
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #484848
+}
+
+.comments h1 {
+  margin-bottom: 20px;
+}
+.add-comment-container {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DBDBDB;
+  display: flex;
+  margin-bottom: 50px;
+  align-items: flex-end;
+}
+.add-comment-container input {
+  font-family: 'Cabin', sans-serif;
+  width: calc(100% - 50px);
+  color: #484848;
+  border: none;
+  border-bottom: 2px solid #008489;
+  padding: 0px;
+  padding-left: 10px;
+  line-height: 18px;
+  height: 50px;
+  font-size: 16px;
+}
+.add-comment-container input:focus {
+  outline: none;
+  border-radius: 5px 0px 0px 5px;
+  box-shadow: 1px 0px 2px 1px #919191;
+}
+.add-comment-container button {
+  background: #008489;
+  border: 0px;
+  height: 53px;
+  width: 73px;
+  color: white;
+  border-radius: 0px 5px 5px 0px;
+  padding: 10px;
+  box-shadow: 1px 0px 2px 1px #919191;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.comment {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #DBDBDB;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.picture-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.add-comment-container .picture-container img {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.comment-header {
+  display: flex;
+  margin-bottom: 20px;
+}
+@media (min-width: 750px) and (max-width: 1129px) {
+  .comments {
+    width: 648px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1130px) {
+  .comments {
+    width: 1032px;
+    margin: 0 auto;
+  }
+
+}

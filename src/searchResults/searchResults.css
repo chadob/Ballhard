@@ -1,0 +1,12 @@
+.search-results {
+  margin-top: 82px;
+  width: calc(100% - 48px);
+  padding: 24px;
+}
+@media (min-width: 1130px) {
+  .search-results {
+    width: calc(100% - 160px);
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

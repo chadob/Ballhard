@@ -1,0 +1,32 @@
+{
+  "name": "ball-hard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.11.0",
+    "compression": "^1.7.3",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.4",
+    "cross-fetch": "^2.2.2",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "mongoose": "^5.3.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-persist": "^5.10.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.1"
+  }
+}

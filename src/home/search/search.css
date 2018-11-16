@@ -1,0 +1,210 @@
+.search {
+  position: absolute;
+}
+.banner .search {
+  margin-top: 32px;
+  top: 40vh;
+  width: 100%;
+}
+.navbar .search {
+  width: 450px;
+  left: 100px;
+  top: 16px;
+  z-index: 2;
+}
+.navbar .search-focused {
+  width: 600px;
+}
+.navbar .search-focused .search-content-wrapper {
+  border-radius: 5px 5px 0px 0px;
+  left: 20px;
+  width: calc(100% -22px);
+}
+.search-content-wrapper {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 #919191 inset;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 1px #919191;
+  transition: width .5s, left .5s;
+}
+.search-focused .search-content-wrapper {
+  border-radius: 5px 5px 0px 0px;
+}
+.banner .search-content-wrapper {
+  width: calc(100% - 42px);
+  padding: 21px 21px 21px 21px;
+}
+.navbar .search-content-wrapper {
+  padding: 11px 11px 11px 11px;
+}
+.banner .search-content {
+  display: flex;
+}
+.search input {
+  color: #484848;
+  border: none;
+  font-weight: bold;
+  padding: 0px;
+  width: calc(100% - 50px);
+}
+.banner .search input {
+  font-size: 18px;
+}
+.navbar .search input {
+  font-size: 17px;
+}
+.search input:focus {
+  outline: none;
+}
+::placeholder {
+  color: #919191;
+}
+.search-icon-wrapper {
+  display: inline-block;
+  width: 22px;
+  margin-right: 22px;
+}
+.search-icon-wrapper a {
+  text-decoration: none;
+
+}
+.icon-search:before {
+  color: #484848;
+  font-size: 22px;
+  font-weight: bold;
+}
+.search:focus-within .shown {
+  display: block;
+}
+.search:focus-within .hidden{
+  display: none;
+}
+
+.search-parameters {
+  display: none;
+  background: white;
+  border-radius: 0px 0px 5px 5px;
+  padding: 21px 21px 21px 21px;
+  border: 1px solid #DBDBDB;
+  box-shadow: 1px 2px 2px 1px #919191;
+}
+.banner .search-parameters {
+  width: calc(100% - 44px);
+}
+.navbar .search-parameters {
+  width: calc(100% - 44px);
+}
+.search-par-title {
+  font-size: 14px;
+}
+.search-buttons {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  list-style-type: none;
+}
+.search-buttons a {
+  padding: 10px;
+  /* color: #484848; */
+  text-decoration: none;
+  text-align: center;
+  /* border: 1px solid #DBDBDB; */
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.search-buttons a {
+  color: white;
+  background-color: #008489;
+  border: 1px solid #182441;
+}
+/* .search-buttons a:hover {
+  box-shadow: 1px 2px 2px 1px #919191;
+} */
+.search-buttons a:hover {
+  box-shadow: 1px 1px 1px 1px #182441;
+}
+.recent-search {
+  padding: 10px 0px 10px 5px;
+}
+.recent-search:hover {
+  background-color: #DBDBDB;
+}
+.recent-searches a {
+  width: 100%;
+  text-decoration: none;
+  color: #484848;
+}
+
+.search-matches {
+  display: none;
+  background: white;
+  border-radius: 0px 0px 5px 5px;
+  padding: 21px 21px 21px 21px;
+  border: 1px solid #DBDBDB;
+  box-shadow: 1px 2px 2px 1px #919191;
+}
+.banner .search-matches {
+  width: calc(100% - 44px);
+}
+.navbar .search-matches {
+  width: calc(100% - 44px);
+  position: absolute;
+}
+.common-search {
+  padding: 10px 0px 10px 5px;
+}
+.common-search:hover {
+  background-color: #DBDBDB;
+}
+.search-matches a {
+  width: 100%;
+  text-decoration: none;
+  color: #484848;
+  font-weight: bold;
+}
+@media (max-width: 740px) {
+  .navbar .search {
+    width: 100%;
+    left: 0px;
+  }
+  .navbar .search-content-wrapper {
+    position: absolute;
+    left: 100px;
+    width: calc(100% - 145px);
+    border: 1px solid #DBDBDB;
+  }
+  .navbar .search-focused .search-content-wrapper {
+    border-radius: 5px 5px 5px 5px;
+    left: 10px;
+    width: calc(100% - 45px);
+    box-shadow: 1px 2px 2px 1px #919191;
+  }
+  .navbar .search-parameters {
+    position: absolute;
+    top: 55px;
+    width: calc(100% - 42px);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px 0px 5px 5px;
+  }
+  .navbar .search-matches {
+    position: absolute;
+    top: 55px;
+    width: calc(100% - 42px);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px 0px 5px 5px;
+  }
+}
+@media (min-width: 741px) and (max-width: 1130px) {
+  .navbar .search-parameters {
+    width: calc(100% - 44px);
+    border-radius: 0px 0px 5px 5px;
+  }
+  .navbar .search-matches {
+    width: calc(100% - 44px);
+    border-radius: 0px 0px 5px 5px;
+  }
+}

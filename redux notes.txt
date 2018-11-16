@@ -1,0 +1,28 @@
+Actions:
+1. Search
+  A. by section: dunking, dribbling, shooting
+  B. By Phrase
+2. Account logging
+  A. Sign in
+  B. Sign Out
+  C. Create account
+3. Video
+  A. Rate video
+  B. Favorite video
+  C. Add comment
+
+Reducers:
+
+Data to grab:
+1. Home
+  A. Recent Searches
+  B. Carousel pictures?
+  C. Videos by searches
+2. Video:
+  A. URL
+  B. Title, Rating, Views, Author, Author Picture
+  C. Your rating, Favorite status
+  D. Comments: picture, author, date, comment
+3. Account logging
+  A. Get whether username and password match
+  B. Get whether username exists already
