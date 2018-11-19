@@ -107,7 +107,7 @@ function mapStateToProps ( state ) {
   return {
     userId: state.data.user && state.data.user._id,
     video: state.data.video,
-    rating: state.data.user && state.data.user.rating && state.data.user.ratings[state.data.video._id],
+    rating: state.data.user && state.data.user.ratings && state.data.user.ratings[state.data.video._id],
     favorite: state.data.user && state.data.user.favoriteVideos && state.data.user.favoriteVideos.indexOf(state.data.video._id) > -1
   }
 }

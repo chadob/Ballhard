@@ -91,12 +91,24 @@ export const fetchVideo = id => {
     axios.get(`${url}video/get/${id}`)
     .then((res) => {
       let video = res.data
+      console.log(video)
       dispatch({type: 'FETCH_VIDEO', payload: video});
       dispatch(fetchComments(id, video.commentOrder))
     }).catch((err) => console.log(err))
   }
 }
-
+export const fetchAllVideosAndSearch = (query, type) => {
+  return (dispatch) => {
+    axios.get(`${url}/videos`)
+    .then((res) => {
+      let allVideos = res.data
+      dispatch(search(query, type, allVideos));
+      dispatch({type:FETCH_ALL_VIDEOS, payload: allVideos})
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+}
 export const fetchAllVideos = (userSearches) => {
   return (dispatch) => {
     axios.get(`${url}/videos`)

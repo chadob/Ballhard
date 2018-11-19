@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import banner from './banner'
 import data from './data'
-import { routerReducer } from 'react-router-redux';
+import { connectRouter } from 'connected-react-router'
 
-export default combineReducers({
+export default (history) => combineReducers({
   banner,
   data,
-  router: routerReducer
+  router: connectRouter(history)
 })

@@ -11,7 +11,7 @@ const routes = (
     <NavbarContainer />
     <Switch>
       <Route exact path="/" component={HomeContainer} />
-      <Route path="/search/:type/:query" component={SearchResultsContainer} />
+      <Route path="/search/:type/:query" key={this.type} component={SearchResultsContainer} />
       <Route path="/video/:id" component={VideoPageContainer} />
     </Switch>
   </div>

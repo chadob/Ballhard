@@ -15,7 +15,7 @@ class VideoContainer extends React.Component {
 }
 function mapStateToProps ( state ) {
   return {
-    url: state.data.video.url
+    url: state.data.video && state.data.video.url
   }
 }
 export default connect(mapStateToProps)(VideoContainer)

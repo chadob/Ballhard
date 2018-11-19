@@ -32,9 +32,6 @@ export class Search extends React.Component {
           <div className="search-buttons">
             {this.props.catsArray && this.props.catsArray.map((category, index) =>
               <Link to={"/search/type/" + category.toLowerCase()} onClick={(e) => {
-                console.log('type ran')
-                console.log(this.props.params)
-                console.log(category);
                 this.props.searchByType(category)
               }}>
                 {category}
