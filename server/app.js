@@ -25,7 +25,7 @@ mongoose.connect(url, {useNewUrlParser: true}).then(
   }
 );
 
-let port = 5000 || process.env.PORT
+let port = process.env.PORT || 5000
 
 /** set up routes {API Endpoints} */
 routes(router)
