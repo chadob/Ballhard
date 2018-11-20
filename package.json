@@ -28,7 +28,6 @@
   },
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm run _start\" \"node server/app.js\"",
-    "postinstall": "webpack -p",
     "start": "concurrently --kill-others-on-fail \"npm run _start\" \"node server/app.js\"",
     "_start": "react-scripts start",
     "build": "react-scripts build",
