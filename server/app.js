@@ -9,17 +9,12 @@ const cloudinary = require('cloudinary')
 
 const app = express()
 const router = express.Router()
-const user = 'chado';
-const pass = encodeURIComponent("Jerryrice#80");
-
-const url = `mongodb+srv://chado:${pass}@ballhard-t4bnn.mongodb.net/BallHard?retryWrites=true`
-/** configure cloudinary */
-cloudinary.config({
-    cloud_name: 'YOUR_CLOUDINARY_NAME_HERE',
-    api_key: 'YOUR_CLOUDINARY_API_KEY_HERE',
-    api_secret: 'YOUR_CLOUDINARY_API_SECRET_HERE'
-})
-
+const user = process.env.BallHardUser;
+const pass = encodeURIComponent(process.env.BallHardPass);
+console.log(process.env)
+console.log(user);
+console.log(pass);
+const url = `mongodb+srv://${user}:${pass}@ballhard-t4bnn.mongodb.net/BallHard?retryWrites=true`
 /** connect to MongoDB datastore */
 mongoose.connect(url, {useNewUrlParser: true}).then(
   ()=> {
