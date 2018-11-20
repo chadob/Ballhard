@@ -12,6 +12,7 @@ class VideoPageContainer extends React.Component {
     if (!this.props.video){
       this.props.fetchVideo(this.props.match.params.id)
     }
+    window.scrollTo(0, 0)
   }
   render() {
     if (this.props.video) {

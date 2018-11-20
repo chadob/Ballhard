@@ -1,4 +1,4 @@
-const data = (state={factList: null, currentFact: null, signInWindow: false, signUpWindow: false}, action) => {
+const data = (state={factList: null, currentFact: null, errorOnSignIn: false, signInWindow: false, signUpWindow: false}, action) => {
   switch (action.type) {
     case 'TOGGLE_SIGN_IN':
       return {
@@ -14,6 +14,13 @@ const data = (state={factList: null, currentFact: null, signInWindow: false, sig
       return {
         ...state,
         loggedIn: true,
+        errorOnSignIn: false
+      }
+    case 'FAILED_SIGN_IN':
+      return {
+        ...state,
+        loggedIn: false,
+        errorOnSignIn: true
       }
     case 'FETCH_USER_FOR_SIGN_IN':
       return {
@@ -21,7 +28,6 @@ const data = (state={factList: null, currentFact: null, signInWindow: false, sig
         user: action.payload
       }
     case 'SIGN_OUT':
-      console.log(state);
       return {
         ...state,
         loggedIn: false,
@@ -40,7 +46,6 @@ const data = (state={factList: null, currentFact: null, signInWindow: false, sig
         factList: action.payload.factList
       }
     case 'FETCH_VIDEO':
-      console.log(action.payload)
       return {
         ...state,
         video: action.payload
@@ -123,7 +128,6 @@ const data = (state={factList: null, currentFact: null, signInWindow: false, sig
         }
       }
     case 'SEARCH_BY_PRESET':
-    console.log('reducer type ran')
       return {
         ...state,
         search: {
@@ -134,7 +138,6 @@ const data = (state={factList: null, currentFact: null, signInWindow: false, sig
         }
       }
     case 'SEARCH_BY_TYPE':
-    console.log(action.payload)
       return {
         ...state,
         search: {

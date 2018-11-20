@@ -44,7 +44,6 @@ class NavbarContainer extends React.Component {
   }
 }
 function mapStateToProps ( state ) {
-  console.log(state)
   return {
     signUpWindow: state.data.signUpWindow,
     signInWindow: state.data.signInWindow,

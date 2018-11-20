@@ -21,6 +21,9 @@ export class Signin extends React.Component {
               </path>
             </svg>
           </div>
+          <div className="error-display">
+            {this.props.error && <span> Your username/password is incorrect </span>}
+          </div>
           <form>
             <div className="text-input">
               <input
@@ -38,19 +41,9 @@ export class Signin extends React.Component {
               </input>
             </div>
             <div className="remember-show">
-              <div className="remember">
-                <input
-                  type="checkbox"
-                  checked={this.props.rememberMe}
-                  onClick={(e) => this.props.rememberLogin(e)}
-                />
-                <label class="remember-me">
-                  <span class="checkmark">Remember me</span>
-                </label>
-              </div>
               <a href="\\" onClick={(e) => this.props.toggleHidden()}> {this.props.hidePassword === true ? "Show Password" : "Hide Password"}</a>
             </div>
-            <button type="submit" onClick={(e) => this.props.signIn(this.props.username, this.props.password)}> Sign In </button>
+            <button type="button" onClick={(e) => this.props.signIn(this.props.username, this.props.password)}> Sign In </button>
           </form>
           <div>
             <span> "Don't have an account?"

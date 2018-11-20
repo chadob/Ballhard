@@ -1,6 +1,5 @@
 export function searchFor(string) {
   return function(query, idx, array) {
-    console.log(query)
     return query.every(containsWord(string));
   }
 }

@@ -56,7 +56,7 @@
   top: 0px;
   float: right;
 }
-.picture-container {
+.navbar .picture-container {
   display: inline-block;
   margin-top: 15px;
   margin-left: 15px;
@@ -96,7 +96,7 @@
   .navbar-links {
     display: none;
   }
-  .picture-container {
+  .navbar .picture-container {
     display: none;
   }
   .toggled-nav-toggle {

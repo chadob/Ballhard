@@ -17,7 +17,6 @@ class CommentsContainer extends React.Component {
     let timePosted = new Date();
     let stringDate = timePosted.getMonth() + '/' + timePosted.getDate() + '/' + timePosted.getFullYear();
     let newComment = {author: this.props.username, date: stringDate, video: this.props.videoId, src: this.props.userPicture, comment: txt};
-    console.log(this.props.videoId)
     this.props.addComment(newComment);
     this.setState({commentToBeAdded: ""});
   }

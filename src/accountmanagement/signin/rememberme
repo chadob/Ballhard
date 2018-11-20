@@ -1,0 +1,10 @@
+// <div className="remember">
+//   <input
+//     type="checkbox"
+//     checked={this.props.rememberMe}
+//     onClick={(e) => this.props.rememberLogin(e)}
+//   />
+//   <label class="remember-me">
+//     <span class="checkmark">Remember me</span>
+//   </label>
+// </div>

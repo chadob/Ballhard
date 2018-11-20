@@ -14,7 +14,6 @@ class DisplaySearchContainer extends React.Component {
     this.props.searchByPreset(query, results)
   }
   render() {
-    console.log((this.props.search))
     return (
       <DisplaySearch fetchVideo={this.props.fetchVideo} searchDone={this.props.searchDone} searchByPreset={this.searchByPreset} title={Object.keys(this.props.search)[0]} amount={this.props.search[Object.keys(this.props.search)[0]].length} search={this.props.search}/>
     );

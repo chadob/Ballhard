@@ -11,7 +11,6 @@ export class Search extends React.Component {
           <div className="search-content">
             <div className="search-icon-wrapper">
               <Link to={'/search/query/' + this.props.currentSearch.toLowerCase()} onClick={(e) => {
-                console.log('query ran')
                 this.props.searchByQuery(this.props.currentSearch);
                 this.props.updateSearches(this.props.currentSearch, this.props.userId)
               }}

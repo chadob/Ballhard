@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-
 }
 .explore h1 {
   color: #484848;
@@ -41,4 +40,13 @@
   margin-left: 16px;
   font-weight: bold;
   font-size: 17px;
+}
+@media (max-width: 756px) {
+  .explore-links-container {
+    flex-wrap: wrap;
+  }
+  .explore-link-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

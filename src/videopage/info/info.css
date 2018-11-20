@@ -33,10 +33,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 440px;
   margin-bottom: 20px;
 }
 .overall-rating-stars {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -89,6 +89,11 @@
 .rate-star-active .star-filling {
   width: 20px;
 }
+@media (min-width: 509px) and (max-width: 749px) {
+  .overall-rating-stars {
+    margin-top: 0px;
+  }
+}
 @media (min-width: 750px) and (max-width: 1129px) {
   .info {
     width: 648px;
@@ -102,6 +107,12 @@
   }
   .author-container {
     display: flex;
+  }
+  .rating-container {
+    width: 444px;
+  }
+  .overall-rating-stars {
+    margin-top: 0px;
   }
 }
 @media (min-width: 1130px) {
@@ -117,5 +128,11 @@
   }
   .author-container {
     display: flex;
+  }
+  .rating-container {
+    width: 444px;
+  }
+  .overall-rating-stars {
+    margin-top: 0px;
   }
 }

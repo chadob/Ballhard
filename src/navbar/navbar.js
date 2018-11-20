@@ -27,8 +27,8 @@ export class Navbar extends React.Component {
               </div>
             ) : (
               <div className="navbar-links">
-                <a href="\\" onClick={(e) => this.props.toggleSignUp(!this.props.signUpWindow)}> Sign Up </a>
-                <a href="\\" onClick={(e) => this.props.toggleSignIn(!this.props.signInWindow)}> Sign In </a>
+                <a href="\\" onClick={(e) => {this.props.toggleSignUp(!this.props.signUpWindow); this.props.toggleSmallNav();}}> Sign Up </a>
+                <a href="\\" onClick={(e) => {this.props.toggleSignIn(!this.props.signInWindow); this.props.toggleSmallNav();}}> Sign In </a>
               </div>
             )
           }
@@ -38,14 +38,14 @@ export class Navbar extends React.Component {
           {
             (this.props.loggedIn) ? (
               <div className="toggled-nav-links">
-                <Link to={'/'}> Home </Link>
-                <a href="\\" onClick={(e) => this.props.signOut()}> Sign Out </a>
+                <Link to={'/'} onClick={this.props.toggleSmallNav}> Home </Link>
+                <a href="\\" onClick={(e) => {this.props.signOut(); this.props.toggleSmallNav();}}> Sign Out </a>
               </div>
             ) : (
               <div className="toggled-nav-links">
-                <Link to={'/'}> Home </Link>
-                <a href="\\" onClick={(e) => this.props.toggleSignUp(!this.props.signUpWindow)}> Sign Up </a>
-                <a href="\\" onClick={(e) => this.props.toggleSignIn(!this.props.signInWindow)}> Sign In </a>
+                <Link to={'/'} onClick={this.props.toggleSmallNav}> Home </Link>
+                <a href="\\" onClick={(e) => {this.props.toggleSignUp(!this.props.signUpWindow); this.props.toggleSmallNav();}}> Sign Up </a>
+                <a href="\\" onClick={(e) => {this.props.toggleSignIn(!this.props.signInWindow); this.props.toggleSmallNav();}}> Sign In </a>
               </div>
             )
           }

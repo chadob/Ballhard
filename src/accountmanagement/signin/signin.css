@@ -40,6 +40,10 @@
   display: block;
   margin: auto;
 }
+.sign-in .error-display {
+  color: #ff5a5f;
+  height: 24px;
+}
 .sign-in .text-input input {
   width: calc(100% - 22px);
   height: 22px;

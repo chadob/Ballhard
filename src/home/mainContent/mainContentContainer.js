@@ -16,7 +16,6 @@ class MainContentContainer extends React.Component {
   }
   componentWillReceiveProps(newProps) {
     if ((newProps.recentSearches && newProps.allVideos) && (this.props.recentSearches !== newProps.recentSearches || this.props.allVideos !== newProps.allVideos)) {
-      console.log('ran')
       this.props.generateRecommendedContent(newProps.recentSearches, newProps.allVideos);
     }
   }

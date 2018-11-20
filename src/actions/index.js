@@ -58,10 +58,9 @@ export function fetchUserForSignIn(username, password) {
         dispatch(fetchAllVideos(userSearches))
         dispatch({type:FETCH_USER_FOR_SIGN_IN, payload: data})
         dispatch({type: SIGN_IN});
-      } else {
-        dispatch({type: FAILED_SIGN_IN})
       }
     }).catch((err) => {
+      dispatch({type: FAILED_SIGN_IN})
     })
   }
 }
@@ -91,7 +90,6 @@ export const fetchVideo = id => {
     axios.get(`${url}video/get/${id}`)
     .then((res) => {
       let video = res.data
-      console.log(video)
       dispatch({type: 'FETCH_VIDEO', payload: video});
       dispatch(fetchComments(id, video.commentOrder))
     }).catch((err) => console.log(err))
@@ -171,12 +169,8 @@ export function updateSearches (search, userId) {
 }
 //Search through videos for query
 export const search = (query, type, videos) => {
-  console.log(query)
-  console.log(type)
-  console.log(videos)
   return (dispatch => {
     let splitQuery = query.toLowerCase().split(" ");
-    console.log(splitQuery)
     let results;
     if (type === "query") {
       results = {['Videos containing "' + [query] + '"']: videos.filter((video, idx) => {

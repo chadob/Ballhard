@@ -11,7 +11,6 @@ class ExploreContainer extends React.Component {
     };
   }
   render() {
-    console.log(this.props.searchByType)
     return (
       <Explore searchByType={this.props.searchByType} sectionsArray={[...this.state.sectionsArray]}/>
     );

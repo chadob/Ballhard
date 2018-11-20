@@ -26,7 +26,6 @@ export class DisplaySearch extends React.Component {
             <Link
             to={"/search/preset/" + this.props.title.toLowerCase()}
             onClick={(e) => {
-              console.log('link click')
               this.props.searchByPreset(this.props.title, this.props.search)
             }}>
             Show all
