@@ -27,8 +27,8 @@
     "node": "10.3.0"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"npm run _start\" \"node server/app.js\"",
-    "start": "concurrently --kill-others-on-fail \"npm run _start\" \"node server/app.js\"",
+    "dev": "concurrently --kill-others-on-fail \"node server/app.js\" \"npm run _start\"",
+    "start": "concurrently --kill-others-on-fail \"node server/app.js\" \"npm run _start\" ",
     "_start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

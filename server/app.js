@@ -11,9 +11,6 @@ const app = express()
 const router = express.Router()
 const user = process.env.BallHardUser;
 const pass = encodeURIComponent(process.env.BallHardPass);
-console.log(process.env)
-console.log(user);
-console.log(pass);
 const url = `mongodb+srv://${user}:${pass}@ballhard-t4bnn.mongodb.net/BallHard?retryWrites=true`
 /** connect to MongoDB datastore */
 mongoose.connect(url, {useNewUrlParser: true}).then(
