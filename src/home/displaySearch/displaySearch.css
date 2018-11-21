@@ -14,8 +14,8 @@
 .display-search-videos-container a {
   color: #484848;
   width: calc(100%);
+  margin-bottom: 20px;
   margin-right: 20px;
-  margin-bottom: 20px
 }
 .video-thumbnail {
   width: 100%;
