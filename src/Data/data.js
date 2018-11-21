@@ -1,5 +1,5 @@
 export const data = {
-  imgList: [{src: "two-foot-dunk", placeholder: 'Try "Jumping Off of One Foot"'}, {src: "shooting", placeholder: 'Try "Proper Shooting Form"'}, {src: "crossover", placeholder: 'Try "Unguardable Crossover"'}],
+  imgList: [{src: "two-foot-dunk", placeholder: 'Try "Vertical"'}, {src: "shooting", placeholder: 'Try "Shooting Drill"'}, {src: "crossover", placeholder: 'Try "Crossover"'}],
   factList: ["Did you know that 1 in 10 ppl can't feel the texture on a basketball?", "Did you know that Michael Jordan hates lima beans?", "Over 42% of the world's population has never seen a basketball."],
   users: {
     0: {

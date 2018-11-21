@@ -7,8 +7,7 @@
   flex-wrap: wrap;
 }
 .info-title {
-  width: 440px;
-  height: 90px;
+  width: 100%;
 }
 .info-title h1 {
 
@@ -34,6 +33,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  max-width: 444px;
+  width: 100%;
 }
 .overall-rating-stars {
   margin-top: 20px;

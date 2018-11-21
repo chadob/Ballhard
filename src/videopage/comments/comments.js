@@ -14,7 +14,7 @@ export class Comments extends React.Component {
             <button onClick={() => this.props.addComment(this.props.commentToBeAdded)}> Add </button>
           </div>
         }
-        {this.props.comments && this.props.comments.map((comment, idx) =>
+        {this.props.comments && this.props.comments.length > 0 && this.props.comments.map((comment, idx) =>
           <div className="comment">
             <div className="comment-header">
               <div className="picture-container">

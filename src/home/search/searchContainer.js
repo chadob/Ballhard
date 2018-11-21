@@ -8,7 +8,7 @@ class SearchContainer extends React.Component {
   constructor (props) {
     super(props);
     this.catsArray = ["Dribbling", "Shooting", "Dunking"],
-    this.commonSearchesArray = ["how to dunk", "proper shooting form", "unstoppable crossover"],
+    this.commonSearchesArray = ["how to dunk", "shooting form", "crossover"],
     this.state = {
       searchDisplay: "blurred",
       searchParameters: "hidden",

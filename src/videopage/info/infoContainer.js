@@ -8,6 +8,10 @@ class InfoContainer extends React.Component {
   constructor (props) {
     super(props);
     this.toggleFavorite = this.toggleFavorite.bind(this);
+    this.state = {
+      video: ''
+    }
+
   }
   createStarsArray(amount) {
     let arr = [];
@@ -20,7 +24,7 @@ class InfoContainer extends React.Component {
         onMouseOver={(e) => this.hoverStars(e, curI)}
         onMouseOut={(e) => this.unHoverStars(e, curI)}
         onClick={(e) => this.clickStar(e, curI)}
-        className={"star-container rate-star-container " + (curI <= this.props.rating && "rate-star-rated")}
+        className={"star-container rate-star-container " + (curI <= this.props.user.ratings[this.props.video._id] && "rate-star-rated")}
         key={i}>
         <img src={require("../../Assets/star.png")} />
         <div className="star-filling" style={{}}>
@@ -28,7 +32,7 @@ class InfoContainer extends React.Component {
       </div>
       );
     }
-    video.rateStars = arr;
+    this.setState({'rateStars': arr});
   }
   hoverStars(e, num) {
     let children = e.target.parentNode.parentNode.childNodes;
@@ -72,30 +76,34 @@ class InfoContainer extends React.Component {
     this.props.toggleFavorite(this.props.video._id, this.props.userId)
   }
   componentWillMount() {
-    let stars = [];
-    let video = this.props.video;
-    let j;
-    for (var i=this.props.video.rating; i > 0; i--) {
-      if (i > 1 ) {
-        j = 1;
-      } else {
-        j = i
-      }
-      stars.push(
-        <div className="star-container">
+    if (this.props.video) {
+      let stars = [];
+      let video = this.props.video;
+      let j;
+      for (var i=this.props.video.rating; i > 0; i--) {
+        if (i > 1 ) {
+          j = 1;
+        } else {
+          j = i
+        }
+        stars.push(
+          <div className="star-container">
           <img src={require("../../Assets/star.png")} />
           <div className="star-filling" style={{width: 20 * j + "px"}}>
           </div>
-        </div>
-      );
+          </div>
+        );
+      }
+      this.setState({'stars': stars});
+      this.createStarsArray(6);
     }
-    video.stars = stars;
-    this.createStarsArray(6);
   }
   render() {
     return (
       <Info
         video={this.props.video}
+        stars={this.state.stars}
+        rateStars={this.state.rateStars}
         favorite={this.props.favorite}
         toggleFavorite={this.toggleFavorite}
         userId={this.props.userId}
@@ -107,6 +115,7 @@ function mapStateToProps ( state ) {
   return {
     userId: state.data.user && state.data.user._id,
     video: state.data.video,
+    user: state.data.user,
     rating: state.data.user && state.data.user.ratings && state.data.user.ratings[state.data.video._id],
     favorite: state.data.user && state.data.user.favoriteVideos && state.data.user.favoriteVideos.indexOf(state.data.video._id) > -1
   }

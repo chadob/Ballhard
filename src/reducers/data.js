@@ -50,6 +50,11 @@ const data = (state={factList: null, currentFact: null, errorOnSignIn: false, si
         ...state,
         video: action.payload
       }
+    case 'CLEAR_VIDEO':
+      return {
+        ...state,
+        video: action.payload
+      }
     case 'FETCH_ALL_VIDEOS':
       return {
         ...state,

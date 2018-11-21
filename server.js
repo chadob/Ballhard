@@ -21,7 +21,6 @@ mongoose.connect(url, {useNewUrlParser: true}).then(
   }
 );
 
-console.log(path.join(__dirname, '/'))
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '/build')));
 

@@ -9,6 +9,7 @@ import {
   SIGN_OUT,
   SIGN_UP,
   FETCH_LISTS,
+  CLEAR_VIDEO,
   FETCH_VIDEO,
   FETCH_USER_FOR_SIGN_IN,
   FETCH_ALL_VIDEOS,
@@ -84,6 +85,10 @@ export const fetchLists = () => ({
       imgList: data.imgList,
       factList: data.factList
     }
+});
+export const clearVideo = () => ({
+    type: CLEAR_VIDEO,
+    payload: null
 });
 export const fetchVideo = id => {
   return (dispatch) => {

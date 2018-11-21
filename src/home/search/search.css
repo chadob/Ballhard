@@ -5,6 +5,7 @@
   margin-top: 32px;
   top: 40vh;
   width: 100%;
+  display: none;
 }
 .navbar .search {
   width: 450px;
@@ -196,6 +197,11 @@
     border-left: none;
     border-right: none;
     border-radius: 0px 0px 5px 5px;
+  }
+}
+@media (min-width: 444px)  {
+  .banner .search {
+    display: block
   }
 }
 @media (min-width: 741px) and (max-width: 1130px) {

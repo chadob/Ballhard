@@ -5,6 +5,7 @@ export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 export const SIGN_UP = 'SIGN_UP';
 export const FETCH_LISTS = 'FETCH_LISTS';
+export const CLEAR_VIDEO = 'CLEAR_VIDEO';
 export const FETCH_VIDEO = 'FETCH_VIDEO';
 export const FETCH_ALL_VIDEOS = 'FETCH_ALL_VIDEOS';
 export const FETCH_USER_FOR_SIGN_IN = 'FETCH_USER_FOR_SIGN_IN';

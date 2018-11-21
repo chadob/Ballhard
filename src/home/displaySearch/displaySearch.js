@@ -11,15 +11,35 @@ export class DisplaySearch extends React.Component {
           }
         </div>
         <div className="display-search-videos-container">
-          {this.props.search[this.props.title].map((video, index) =>
-            <Link to={"/video/" + video._id} onClick={this.props.fetchVideo(video._id)}>
-              <div className="video-thumbnail">
-                <img src={"https://img.youtube.com/vi" + video.url.substring(29,) +"/0.jpg"} />
-              </div>
-              <h5 className="video-title"> {video.title} </h5>
-              <h6 className="video-author"> {video.author} </h6>
-            </Link>
-          )}
+          {
+            this.props.searchDone ? (
+              this.props.search[this.props.title].map((video, index) => {
+                if (index < 8) {
+                  return (
+                    <Link to={"/video/" + video._id} onClick={() => {console.log(video); this.props.clearVideo(); this.props.fetchVideo(video._id)}}>
+                    <div className="video-thumbnail">
+                    <img src={"https://img.youtube.com/vi" + video.url.substring(29,) +"/0.jpg"} />
+                    </div>
+                    <h5 className="video-title"> {video.title} </h5>
+                    <h6 className="video-author"> {video.author} </h6>
+                    </Link>
+                  )
+                }
+              })
+            ) : (
+              this.props.search[this.props.title].map((video, index) => {
+                return (
+                  <Link to={"/video/" + video._id} onClick={() => {console.log(video); this.props.clearVideo(); this.props.fetchVideo(video._id)}}>
+                  <div className="video-thumbnail">
+                  <img src={"https://img.youtube.com/vi" + video.url.substring(29,) +"/0.jpg"} />
+                  </div>
+                  <h5 className="video-title"> {video.title} </h5>
+                  <h6 className="video-author"> {video.author} </h6>
+                  </Link>
+                )
+              })
+            )
+          }
         </div>
         {this.props.searchDone &&
           <div className="show-search">
