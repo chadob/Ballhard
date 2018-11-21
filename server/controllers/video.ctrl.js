@@ -11,7 +11,6 @@ module.exports = {
     Video.find()
     .exec((err, videos)=> {
       if (err) {
-        console.log(err)
         res.send(err)
       }
       else if (!videos) {
@@ -19,7 +18,6 @@ module.exports = {
         res.send(404)
       }
       else {
-        console.log(videos);
         res.send(videos)
       }
       next()
@@ -84,11 +82,9 @@ module.exports = {
           res.send(err)
         }
         else if (!comments) {
-          console.log('else if ran')
           res.send(404)
         }
         else {
-          console.log(comments);
           res.send(comments)
         }
         next()

@@ -41,7 +41,6 @@ module.exports = {
         else if (!user)
           res.send(404)
         else {
-          console.log(user)
           res.send(user)
         }
         next()
@@ -69,7 +68,6 @@ module.exports = {
       })
     },
     favoriteVideo: (req, res, next) => {
-      console.log(req)
       User.findOne({"_id": req.body.userId})
       .exec((err, user) => {
         if (err) {
@@ -82,7 +80,6 @@ module.exports = {
         }
         else {
           user.favoriteVideo(req.params.id)
-          console.log(user)
           res.send(user.favoriteVideos)
         }
         next()
@@ -91,7 +88,6 @@ module.exports = {
     //add users rating to the user's document
     // Recalculate the videos average rating
     rateVideo: (req, res, next) => {
-      console.log(req)
       User.findOne({"_id": req.params.id})
       .exec((err, user) => {
         if (err) {

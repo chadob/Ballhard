@@ -27,9 +27,10 @@
     "node": "10.3.0"
   },
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"node server/app.js\" \"npm run _start\"",
-    "start": "concurrently --kill-others-on-fail \"node server/app.js\" \"npm run _start\" ",
-    "_start": "react-scripts start",
+    "dev": "concurrently --kill-others-on-fail \"node server.js\" \"npm run build\"",
+    "start": "node server.js",
+    "proxy": "http://localhost:5000",
+    "heroku-postbuild": "npm install && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
