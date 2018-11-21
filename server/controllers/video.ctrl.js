@@ -1,9 +1,8 @@
 /** server/controllers/video.ctrl.js*/
-const Video = require('./../models/Video')
-const Comment = require('./../models/Comment')
-const User = require('./../models/User')
+const Video = require('./../models/video')
+const Comment = require('./../models/comment')
+const User = require('./../models/user')
 const fs = require('fs')
-const cloudinary = require('cloudinary')
 const url = "http://localhost:5000/api/";
 const mongoose = require('mongoose')
 

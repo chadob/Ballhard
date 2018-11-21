@@ -1,8 +1,7 @@
 /** server/controllers/video.ctrl.js*/
-const Search = require('./../models/Search')
-const User = require('./../models/User')
+const Search = require('./../models/search')
+const User = require('./../models/user')
 const fs = require('fs')
-const cloudinary = require('cloudinary')
 const url = "http://localhost:5000/api/";
 const mongoose = require('mongoose')
 console.log(Search);
